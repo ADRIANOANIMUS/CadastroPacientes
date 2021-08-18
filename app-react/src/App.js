@@ -1,11 +1,13 @@
 import './App.css';
+import Register from './components/Register';
 
 function App() {
   return (
     <div >
 
-      <h1>Adriano Pereira </h1>
-      
+      <Register/>
+
+            
     </div>
   );
 }
