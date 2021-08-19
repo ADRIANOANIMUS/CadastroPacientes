@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const FormRegister = () =>{
 
@@ -7,6 +7,9 @@ const FormRegister = () =>{
         email: '',
         endereco: ''
     }
+
+    let { valor, setValues} = useState(dados)
+
     return(
         <h1>FormRegister</h1>
     )
