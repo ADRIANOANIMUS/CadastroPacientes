@@ -7,7 +7,7 @@ const Register = () => {
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
                     <h1 className="display-4">Cadastro de Pacientes</h1>
-                    <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+                    <p className="lead">This is </p>
                 </div>
             </div>
 
@@ -19,7 +19,7 @@ const Register = () => {
                     <h2>Lista de Pacientes</h2>
                 </div>
             </div>            
-    </div>
+         </div>
     )
 }
 export default Register
