@@ -1,2 +1,2 @@
 # CadastroPacientes
-CRUD application of patient registration with React App
+CRUD application of patient registration with ReactJS
