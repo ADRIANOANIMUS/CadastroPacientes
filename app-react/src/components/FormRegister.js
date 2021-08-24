@@ -8,10 +8,25 @@ const FormRegister = () =>{
         endereco: ''
     }
 
-    let { valor, setValues} = useState(dados)
+    let { values, setValues} = useState(dados)
 
     return(
-        <h1>FormRegister</h1>
+       <fom>
+           <div className ="form-group input-group">
+               <div className="input-grou-prepend">
+                    <div className="input-group-text">
+                        <i className="fas fa-user"></i>
+
+                    </div>
+
+               </div>
+                <input className="form-control" placeholder="Nome" name ="nome" value = {values.nome}/>
+           </div>
+           <div className="row">
+
+           </div>
+
+       </fom>
     )
 }
 export default FormRegister
