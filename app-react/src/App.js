@@ -1,5 +1,6 @@
 import './App.css';
 import Register from './components/Register';
+import { Button } from 'reactstrap';
 
 function App() {
   return (
