@@ -11,12 +11,21 @@ const FormRegister = () => {
     let { values, setValues } = useState(dados)
 
     const manipuladorInputChange = e => {
-        let 
+        let { nome, value} = e.target
+
+        setValues({
+            ...values,
+            [nome]: value
+        })
 
     }
 
+    const manipuladorFormEnvio = e =>{
+        e.preventDefault()
+    }
+
     return (
-        <fom>
+        <fom autoComplete="off" onSubmit="{manipuladorFormEnvio}">
             <div className="form-group input-group">
                 <div className="input-grou-prepend">
                     <div className="input-group-text">
