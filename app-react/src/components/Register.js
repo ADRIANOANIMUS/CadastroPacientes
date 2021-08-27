@@ -1,7 +1,22 @@
 import React from 'react'
 import FormRegister from './FormRegister'
+import fireDb from '../firebase'
 
 const Register = () => {
+
+    const addEdit = obj => {
+
+        fireDb.child('pacientes').push(
+            obj,
+            error => {
+                if (error) {
+                    console.log(error)
+                    
+                }
+            } 
+        )
+
+    }
     return (
         <div>
             <div className="jumbotron jumbotron-fluid">
@@ -13,7 +28,7 @@ const Register = () => {
 
             <div className="row">
                 <div className="col-md-5">
-                    <FormRegister/>
+                    <FormRegister addEdit ={addEdit}/>
                 </div>
                 <div>
                     <h2>Lista de Pacientes</h2>

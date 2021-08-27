@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const FormRegister = () => {
+const FormRegister = (props) => {
 
     const dados = {
         nome: '',
@@ -22,10 +22,11 @@ const FormRegister = () => {
 
     const manipuladorFormEnvio = e => {
         e.preventDefault()
+        props.addEdit(values)
     }
 
     return (
-        <fom autoComplete="off" onSubmit="{manipuladorFormEnvio}">
+        <fom autoComplete="off" onSubmit={manipuladorFormEnvio}>
             <div className="form-group input-group">
                 <div className="input-grou-prepend">
                     <div className="input-group-text">
