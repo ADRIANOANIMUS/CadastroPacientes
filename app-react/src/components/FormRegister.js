@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState} from 'react'
 
 const FormRegister = (props) => {
 
@@ -8,14 +8,14 @@ const FormRegister = (props) => {
         telefone: ''
     }
 
-    let { values, setValues } = useState(dados)
+    let [ values, setValues ] = useState(dados)
 
     const manipuladorInputChange = e => {
-        let { nome, value } = e.target
+        let { name, value } = e.target
 
         setValues({
             ...values,
-            [nome]: value
+            [name]: value
         })
 
     }
@@ -26,7 +26,7 @@ const FormRegister = (props) => {
     }
 
     return (
-        <fom autoComplete="off" onSubmit={manipuladorFormEnvio}>
+        <form autoComplete="off" onSubmit={manipuladorFormEnvio}>
             <div className="form-group input-group">
                 <div className="input-grou-prepend">
                     <div className="input-group-text">
@@ -42,7 +42,7 @@ const FormRegister = (props) => {
                             <i className="fas fa-mobile-alt"></i>
                         </div>
                     </div>
-                    <input className="form-control" placeholder="telefone" name="email" value={values.telefone} onChange={manipuladorInputChange} />
+                    <input className="form-control" placeholder="telefone" name="telefone" value={values.telefone} onChange={manipuladorInputChange} />
                 </div>
             </div>
             <div className="form-group input-group col-md-6">
@@ -54,11 +54,11 @@ const FormRegister = (props) => {
                 <input className="form-control" placeholder="email" name="email" value={values.email} onChange={manipuladorInputChange} />
             </div>
             <div className = "form-group">
-                <input type = "submit" value = "save" className = "btn btn-primary btn-block"/>
+                <input type = "submit" value="Salvar" className="btn btn-primary btn-block"/>
 
             </div>
                         
-        </fom>
+        </form>
     )
 }
 export default FormRegister

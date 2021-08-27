@@ -1,6 +1,6 @@
 import React from 'react'
 import FormRegister from './FormRegister'
-import fireDb from '../firebase'
+import fireDb from '../database/firebase'
 
 const Register = () => {
 
