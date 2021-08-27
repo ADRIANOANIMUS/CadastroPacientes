@@ -52,7 +52,12 @@ const FormRegister = (props) => {
                     </div>
                 </div>
                 <input className="form-control" placeholder="email" name="email" value={values.email} onChange={manipuladorInputChange} />
-            </div>            
+            </div>
+            <div className = "form-group">
+                <input type = "submit" value = "save" className = "btn btn-primary btn-block"/>
+
+            </div>
+                        
         </fom>
     )
 }
