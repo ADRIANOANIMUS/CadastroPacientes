@@ -14,7 +14,7 @@ const Register = () => {
                 })
             }
         })
-    })
+    }, [])
 
     const addEdit = obj => {
 
@@ -52,7 +52,21 @@ const Register = () => {
                                 <td>Telefone</td>
                             </tr>
                         </thead>
-                        
+
+                        <tbody>
+                            {
+                                Object.keys(dadosPacientes).map(id =>{
+                                    return <tr>
+                                        <td>{dadosPacientes[id].nome}</td>
+                                        <td>{dadosPacientes[id].email}</td>
+                                        <td>{dadosPacientes[id].telefone}</td>
+                                    </tr>
+                                }
+
+                                )
+                            }
+                        </tbody>
+
                     </table>
                 </div>
             </div>
