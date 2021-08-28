@@ -1,15 +1,14 @@
-import React, {useState, useEffect}from 'react'
+import React, { useState, useEffect } from 'react'
 import FormRegister from './FormRegister'
 import fireDb from '../database/firebase'
-import { useState } from 'react'
 
 const Register = () => {
 
     let [dadosPacientes, setDadosPacientes] = useState({})
 
-    useEffect( () => {
+    useEffect(() => {
         fireDb.child('pacientes').on('value', dbPhoto => {
-            if(dbPhoto.val() != null){
+            if (dbPhoto.val() != null) {
                 setDadosPacientes({
                     ...dbPhoto.val()
                 })
@@ -24,9 +23,9 @@ const Register = () => {
             error => {
                 if (error) {
                     console.log(error)
-                    
+
                 }
-            } 
+            }
         )
 
     }
@@ -41,13 +40,23 @@ const Register = () => {
 
             <div className="row">
                 <div className="col-md-5">
-                    <FormRegister addEdit ={addEdit}/>
+                    <FormRegister addEdit={addEdit} />
                 </div>
-                <div>
-                    <h2>Lista de Pacientes</h2>
+                <div className="col-md-7">
+                    <table className="table table-boderless table-stripped">
+
+                        <thead className="thead-light">
+                            <tr>
+                                <td>Nome</td>
+                                <td>Email</td>
+                                <td>Telefone</td>
+                            </tr>
+                        </thead>
+                        
+                    </table>
                 </div>
-            </div>            
-         </div>
+            </div>
+        </div>
     )
 }
 export default Register
