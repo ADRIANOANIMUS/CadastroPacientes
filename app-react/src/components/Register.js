@@ -55,16 +55,14 @@ const Register = () => {
 
                         <tbody>
                             {
-                                Object.keys(dadosPacientes).map(id =>{
-                                    return <tr>
+                                Object.keys(dadosPacientes).map(id => {
+                                    return <tr key={id}>
                                         <td>{dadosPacientes[id].nome}</td>
                                         <td>{dadosPacientes[id].email}</td>
                                         <td>{dadosPacientes[id].telefone}</td>
                                     </tr>
                                 }
-
-                                )
-                            }
+                                )}
                         </tbody>
 
                     </table>
