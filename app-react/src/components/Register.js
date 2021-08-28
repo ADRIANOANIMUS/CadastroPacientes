@@ -1,8 +1,21 @@
-import React from 'react'
+import React, {useState, useEffect}from 'react'
 import FormRegister from './FormRegister'
 import fireDb from '../database/firebase'
+import { useState } from 'react'
 
 const Register = () => {
+
+    let [dadosPacientes, setDadosPacientes] = useState({})
+
+    useEffect( () => {
+        fireDb.child('pacientes').on('value', dbPhoto => {
+            if(dbPhoto.val() != null){
+                setDadosPacientes({
+                    ...dbPhoto.val()
+                })
+            }
+        })
+    })
 
     const addEdit = obj => {
 
