@@ -20,17 +20,35 @@ const Register = () => {
 
     const addEdit = obj => {
 
-        fireDb.child('pacientes').push(
-            obj,
-            error => {
-                if (error) {
-                    console.log(error)
+        if(idAtual ==''){
 
+        
+
+            fireDb.child('pacientes').push(
+                obj,
+                error => {
+                    if (error) {
+                        console.log(error)
+
+                    }else{
+                        setidAtual('')
+                    }
+                }
+            )       
+
+    } else {
+        fireDb.child('pacientes/${idAtual}').set(
+            obj,
+            err => {
+                if(err){
+                    console.log(err)
                 }
             }
         )
 
     }
+}
+    
     return (
         <div>
             <div className="jumbotron jumbotron-fluid">

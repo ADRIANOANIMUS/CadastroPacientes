@@ -66,7 +66,7 @@ const FormRegister = (props) => {
                 <input className="form-control" placeholder="email" name="email" value={values.email} onChange={manipuladorInputChange} />
             </div>
             <div className = "form-group">
-                <input type = "submit" value="Salvar" className="btn btn-primary btn-block"/>
+                <input type = "submit" value={props.idAtual =='' ? 'Salvar' : 'Atualizar'} className="btn btn-primary btn-block"/>
 
             </div>
                         
