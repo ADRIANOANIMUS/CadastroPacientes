@@ -34,7 +34,7 @@ const Register = () => {
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
                     <h1 className="display-4">Cadastro de Pacientes</h1>
-                    <p className="lead">Jumbotron Test</p>
+                    <p className="lead">Dados do Paciente</p>
                 </div>
             </div>
 
