@@ -20,7 +20,7 @@ const Register = () => {
 
     const addEdit = obj => {
 
-        if(idAtual ==''){       
+        if (idAtual == '') {
 
             fireDb.child('pacientes').push(
                 obj,
@@ -28,38 +28,38 @@ const Register = () => {
                     if (error) {
                         console.log(error)
 
-                    }else{
+                    } else {
                         setidAtual('')
                     }
                 }
-            )       
+            )
 
-    } else {
-        fireDb.child(`pacientes/${idAtual}`).set(
-            obj,
-            err => {
-                if(err){
-                    console.log(err)
+        } else {
+            fireDb.child(`pacientes/${idAtual}`).set(
+                obj,
+                err => {
+                    if (err) {
+                        console.log(err)
+                    }
                 }
-            }
-        )
+            )
 
+        }
     }
-}
 
-const deletePaciente = key =>{
-    if(window.confirm('Deseja realmente excluir o cadastro?')){
-        fireDb.child(`pacientes/${key}`).remove(
-            err =>{
-                if(err){
-                    console.log(err)
+    const deletePaciente = key => {
+        if (window.confirm('Deseja realmente excluir o cadastro?')) {
+            fireDb.child(`pacientes/${key}`).remove(
+                err => {
+                    if (err) {
+                        console.log(err)
+                    }
                 }
-            }
-        )
+            )
 
+        }
     }
-}
-    
+
     return (
         <div>
             <div className="jumbotron jumbotron-fluid">
@@ -71,7 +71,7 @@ const deletePaciente = key =>{
 
             <div className="row">
                 <div className="col-md-5">
-                    <FormRegister {...({addEdit, idAtual, dadosPacientes})} />
+                    <FormRegister {...({ addEdit, idAtual, dadosPacientes })} />
                 </div>
                 <div className="col-md-7">
                     <table className="table table-boderless table-stripped">
@@ -93,11 +93,11 @@ const deletePaciente = key =>{
                                         <td>{dadosPacientes[id].email}</td>
                                         <td>{dadosPacientes[id].telefone}</td>
                                         <td>
-                                            <a className ="btn btn-primary" onClick = {() => {setidAtual(id)}}>
+                                            <a className="btn btn-primary" onClick={() => { setidAtual(id) }}>
                                                 <i className="fas fa-pencil-alt"></i>
                                             </a>
 
-                                            <a className ="btn btn-danger" onClick ={ () => deletePaciente(id)}>
+                                            <a className="btn btn-danger" onClick={() => deletePaciente(id)}>
                                                 <i className="fas fa-trash-alt"></i>
                                             </a>
 
