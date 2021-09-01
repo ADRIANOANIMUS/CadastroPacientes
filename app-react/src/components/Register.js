@@ -46,6 +46,19 @@ const Register = () => {
 
     }
 }
+
+const deletePaciente = key =>{
+    if(window.confirm('Deseja realmente excluir o cadastro?')){
+        fireDb.child(`pacientes/${key}`).remove(
+            err =>{
+                if(err){
+                    console.log(err)
+                }
+            }
+        )
+
+    }
+}
     
     return (
         <div>
@@ -84,7 +97,7 @@ const Register = () => {
                                                 <i className="fas fa-pencil-alt"></i>
                                             </a>
 
-                                            <a className ="btn btn-danger">
+                                            <a className ="btn btn-danger" onClick ={ () => deletePaciente(id)}>
                                                 <i className="fas fa-trash-alt"></i>
                                             </a>
 
