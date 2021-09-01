@@ -50,6 +50,7 @@ const Register = () => {
                                 <td>Nome</td>
                                 <td>Email</td>
                                 <td>Telefone</td>
+                                <td>Ações</td>
                             </tr>
                         </thead>
 
@@ -60,6 +61,16 @@ const Register = () => {
                                         <td>{dadosPacientes[id].nome}</td>
                                         <td>{dadosPacientes[id].email}</td>
                                         <td>{dadosPacientes[id].telefone}</td>
+                                        <td>
+                                            <a className ="btn btn-primary">
+                                                <i className="fas fa-pencil-alt"></i>
+                                            </a>
+                                            
+                                            <a className ="btn btn-danger">
+                                                <i className="fas fa-trash-alt"></i>
+                                            </a>
+
+                                        </td>
                                     </tr>
                                 }
                                 )}
