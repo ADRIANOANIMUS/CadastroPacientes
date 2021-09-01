@@ -14,6 +14,8 @@ const Register = () => {
                 setDadosPacientes({
                     ...dbPhoto.val()
                 })
+            }else{
+                setDadosPacientes({})
             }
         })
     }, [])
