@@ -6,6 +6,8 @@ const Register = () => {
 
     let [dadosPacientes, setDadosPacientes] = useState({})
 
+    let [idAtual, setidAtual] = useState('')
+
     useEffect(() => {
         fireDb.child('pacientes').on('value', dbPhoto => {
             if (dbPhoto.val() != null) {
@@ -40,7 +42,7 @@ const Register = () => {
 
             <div className="row">
                 <div className="col-md-5">
-                    <FormRegister addEdit={addEdit} />
+                    <FormRegister {...({addEdit, idAtual, dadosPacientes})} />
                 </div>
                 <div className="col-md-7">
                     <table className="table table-boderless table-stripped">
@@ -62,10 +64,10 @@ const Register = () => {
                                         <td>{dadosPacientes[id].email}</td>
                                         <td>{dadosPacientes[id].telefone}</td>
                                         <td>
-                                            <a className ="btn btn-primary">
+                                            <a className ="btn btn-primary" onClick = {() => {setidAtual(id)}}>
                                                 <i className="fas fa-pencil-alt"></i>
                                             </a>
-                                            
+
                                             <a className ="btn btn-danger">
                                                 <i className="fas fa-trash-alt"></i>
                                             </a>

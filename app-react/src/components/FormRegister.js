@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import React, { useEffect, useState} from 'react'
 
 const FormRegister = (props) => {
 
@@ -9,6 +9,18 @@ const FormRegister = (props) => {
     }
 
     let [ values, setValues ] = useState(dados)
+
+    useEffect(() => {
+        if(props.idAtual ==''){
+            setValues({
+                ...dados
+            })
+        } else { 
+            setValues({
+                ...props.dadosPacientes[props.idAtual]
+            })
+        }
+    }, [props.idAtual, props.dadosPacientes] )
 
     const manipuladorInputChange = e => {
         let { name, value } = e.target
