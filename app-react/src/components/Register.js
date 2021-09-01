@@ -20,9 +20,7 @@ const Register = () => {
 
     const addEdit = obj => {
 
-        if(idAtual ==''){
-
-        
+        if(idAtual ==''){       
 
             fireDb.child('pacientes').push(
                 obj,
@@ -37,7 +35,7 @@ const Register = () => {
             )       
 
     } else {
-        fireDb.child('pacientes/${idAtual}').set(
+        fireDb.child(`pacientes/${idAtual}`).set(
             obj,
             err => {
                 if(err){
